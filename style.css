@@ -103,3 +103,16 @@
   text-transform: none;
   text-decoration: none;
 }
+.grid-parent{
+  width: 100%;
+  display: grid;
+  grid-template-rows: 33% 33% 33%;
+	grid-template-columns: 50% 50%;
+  height: 60%;
+}
+.grid-child{
+  border: 2px solid rgba(120, 120, 120, 0.4);
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
