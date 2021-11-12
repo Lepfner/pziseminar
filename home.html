@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
   <meta property="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <style>
     html {
       line-height: 1.15;
@@ -133,15 +134,39 @@
           <div class="home-container05">
             <img alt="image" src="https://avatars.githubusercontent.com/u/2?v=4" class="home-image2" />
             <div class="home-container06">
-              <span>Text</span>
-              <span>Text</span>
+                <p id="gitName"></p>
+                <p id="gitLogin"></p>
               <button class="home-button2 button">
                 <span>
                   <span>Follow</span>
                   <br />
-                  <span></span>
                 </span>
               </button>
+              <p id="gitBio"></p>
+              <p id="gitFollowers"></p>
+              <p id="gitFollowing"></p>
+              <a href="http://chriswanstrath.com/" target="_blank" id="gitLink"></a>
+              <script>
+                const api_url="https://api.github.com/users/defunkt";
+
+                async function getapi(url) {
+
+                  // Storing response
+                  const response = await fetch(url);
+
+                  // Storing data in form of JSON
+                  var data = await response.json();
+                  console.log(data);
+                  //Documenting
+                  document.getElementById("gitName").innerHTML = data.name;
+                  document.getElementById("gitLogin").innerHTML = data.login;
+                  document.getElementById("gitBio").innerHTML = data.bio;
+                  document.getElementById("gitFollowers").innerHTML = data.followers;
+                  document.getElementById("gitFollowing").innerHTML = data.following;
+                  document.getElementById("gitLink").innerHTML = data.blog;
+                }
+                getapi(api_url);
+              </script>
             </div>
           </div>
           <div class="home-container07">
