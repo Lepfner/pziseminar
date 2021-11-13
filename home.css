@@ -56,9 +56,6 @@
   border-color: #ffffff;
   background-color: #38383b;
 }
-.home-menu-burger {
-  display: none;
-}
 .home-icon {
   width: var(--dl-size-size-xsmall);
   height: var(--dl-size-size-xsmall);
@@ -256,10 +253,18 @@
 }
 #gitLink{
   color: white;
+  margin-top: 16px;
+  text-decoration: inherit;
 }
 #gitFollowers{
+  display: inline-block;
   color: white;
 }
 #gitFollowing{
   color: white;
+  display: inline-block;
+}
+#aaa{
+  display: inline-block;
+  color: #4e4b4b;
 }
