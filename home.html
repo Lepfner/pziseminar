@@ -59,7 +59,6 @@
       line-height: 1.15;
       margin: 0;
     }
-    
   </style>
 
   <link rel="stylesheet"
@@ -86,6 +85,59 @@
         document.getElementById("gitLink").innerHTML = data.blog;
       }
       getapi(api_url);
+
+      function getFromAPI(url, callback) {
+        let obj;
+        fetch(url)
+          .then((res) => res.json())
+          .then((data) => (obj = data))
+          .then(() => callback(obj));
+      }
+
+      getFromAPI("https://api.github.com/users/defunkt/repos", getData);
+
+      function getData(arrOfObjs) {
+        let results = "";
+
+        arrOfObjs.slice(0, 6).map((x) => {
+          function isPrivate(x) {
+            if (x.private) {
+              return "Private";
+            } else {
+              return "Public";
+            }
+          }
+          function isDescNull(x) {
+            if (x.description) {
+              return x.description;
+            } else {
+              return "<p><br></p>";
+            }
+          }
+          results +=
+            `<div class='repo'><div class='topRowRepo'> <a href='${x.svn_url}' target='_blank' class='repoName'>` +
+            x.name +
+            "</a><p class='isPublic'>" +
+            isPrivate(x) +
+            "</p></div>";
+          results += " <p class='gitDesc'>" + isDescNull(x) + "</p>";
+          results +=
+            "<div class='lastRowRepo'> <p>" +
+            x.language +
+            "</p>" +
+            " <p class='star'>" +
+            x.stargazers_count +
+            "</p>" +
+            " <div class='watch'><p class='watchers'>" +
+            x.watchers_count +
+            "</p></div> </div>";
+          results += " </div> ";
+        });
+        results += "";
+
+        document.getElementById("repos").innerHTML = results;
+      }
+
     </script>
 
     <div class="home-container">
@@ -115,7 +167,10 @@
               </button>
               <p id="gitBio"></p>
               <div>
-                <p id="gitFollowers"> </p> <p id="aaa"> followers - </p> <p id="gitFollowing"></p> <p id="aaa"> following</p>
+                <p id="gitFollowers"> </p>
+                <p id="aaa"> followers - </p>
+                <p id="gitFollowing"></p>
+                <p id="aaa"> following</p>
               </div>
               <a href="http://chriswanstrath.com/" target="_blank" id="gitLink"></a>
             </div>
@@ -127,13 +182,7 @@
             <span class="home-text7">
               <span class="home-text8">Pinned</span>
             </span>
-            <div class="grid-parent">
-              <div class="grid-child"></div>
-              <div class="grid-child"></div>
-              <div class="grid-child"></div>
-              <div class="grid-child"></div>
-              <div class="grid-child"></div>
-              <div class="grid-child"></div>
+            <div class="grid-parent" id="repos">
             </div>
           </div>
         </div>
