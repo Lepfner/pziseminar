@@ -98,7 +98,7 @@
   margin-top: 18px;
 }
 .repoName{
-  margin-left: 30px;
+  margin-left: 10px;
   text-decoration: inherit;
   color: #2e62db;
 }
@@ -122,9 +122,36 @@
   position: absolute;
   bottom: 0;
 }
-.star{
+.watchers{
+  margin-left: 5px;
+  display: inline-block;
+}
+.icons{
+  color: #4e4b4b;
+  display: inline-block;
+}
+.bookdiv{
+  margin-bottom: 10px;
+}
+.social{
+  margin-top: 16px;
+}
+.iLink{
+  margin-top: 22px;
+}
+.icons2{
+  color: white;
+  display: inline-block;
+}
+.icons3{
+  color: #4e4b4b;
   margin-left: 30px;
 }
-.watchers{
+.icons4{
+  color: #4e4b4b;
   margin-left: 30px;
+  display: inline-block;
+}
+.star{
+  margin-left: 5px;
 }

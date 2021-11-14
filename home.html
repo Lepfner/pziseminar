@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
   <meta property="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./font-awesome-4.7.0//css/font-awesome.min.css">
 
   <style>
     html {
@@ -105,9 +105,9 @@
             }
           }
           results +=
-            `<div class='repo'><div class='topRowRepo'> <a href='${x.svn_url}' target='_blank' class='repoName'>` +
+            `<div class='repo'><div class='topRowRepo'> <div><i class="fa fa-bookmark icons3"></i> <a href='${x.svn_url}' target='_blank' class='repoName'>` +
             x.name +
-            "</a><p class='isPublic'>" +
+            "</a></div><p class='isPublic'>" +
             isPrivate(x) +
             "</p></div>";
           results += " <p class='gitDesc'>" + isDescNull(x) + "</p>";
@@ -115,10 +115,10 @@
             "<div class='lastRowRepo'> <p>" +
             x.language +
             "</p>" +
-            " <p class='star'>" +
+            `<i class="fa fa-star icons3"></i> <p class='star'>` +
             x.stargazers_count +
             "</p>" +
-            " <div class='watch'><p class='watchers'>" +
+            ` <div class='watch'><i class="fa fa-code-fork icons4"></i><p class='watchers'>` +
             x.watchers_count +
             "</p></div> </div>";
           results += " </div> ";
@@ -156,18 +156,24 @@
                 </span>
               </button>
               <p id="gitBio"></p>
-              <div>
+              <div class="social">
+                <i class="fa fa-users icons"></i>
                 <p id="gitFollowers"> </p>
                 <p id="aaa"> followers - </p>
                 <p id="gitFollowing"></p>
                 <p id="aaa"> following</p>
               </div>
+              <div class="iLink">
+              <i class="fa fa-link icons"></i>
               <a href="http://chriswanstrath.com/" target="_blank" id="gitLink"></a>
+            </div>
             </div>
           </div>
           <div class="home-container07">
             <div class="home-container08">
-              <span class="home-text6">Overview</span>
+              <div class="bookdiv">
+              <i class="fa fa-book icons2"></i> <span class="home-text6">Overview</span>
+            </div>
             </div>
             <span class="home-text7">
               <span class="home-text8">Pinned</span>
