@@ -1,3 +1,35 @@
+html {
+  line-height: 1.15;
+  font-family: Inter;
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.15;
+  color: var(--dl-color-gray-black);
+  background-color: var(--dl-color-gray-white);
+}
+* {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+p, li, ul, pre, div, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+sbutton, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
 .home-container {
   width: 100%;
   display: flex;
@@ -75,24 +107,6 @@
 }
 .home-image1 {
   height: 2rem;
-}
-.home-icon02 {
-  width: var(--dl-size-size-xsmall);
-  height: var(--dl-size-size-xsmall);
-}
-.home-icon04 {
-  width: var(--dl-size-size-xsmall);
-  height: var(--dl-size-size-xsmall);
-  margin-right: var(--dl-space-space-twounits);
-}
-.home-icon06 {
-  width: var(--dl-size-size-xsmall);
-  height: var(--dl-size-size-xsmall);
-  margin-right: var(--dl-space-space-twounits);
-}
-.home-icon08 {
-  width: var(--dl-size-size-xsmall);
-  height: var(--dl-size-size-xsmall);
 }
 .home-container02 {
   width: 100%;
@@ -212,31 +226,6 @@
 }
 .home-text8 {
   color: #ffffff;
-}
-@media(max-width: 991px) {
-  .home-icon {
-    display: flex;
-  }
-}
-@media(max-width: 767px) {
-  .home-header {
-    padding-left: var(--dl-space-space-twounits);
-    padding-right: var(--dl-space-space-twounits);
-  }
-  .home-btn-group {
-    display: none;
-  }
-  .home-menu-burger {
-    display: flex;
-  }
-}
-@media(max-width: 479px) {
-  .home-header {
-    padding: var(--dl-space-space-unit);
-  }
-  .home-menu-mobile {
-    padding: 16px;
-  }
 }
 #gitName{
   color: white;
